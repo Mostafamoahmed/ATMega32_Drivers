@@ -47,12 +47,12 @@ typedef enum
 DIO_ErrorStatus DIO_enumSetPinDirection 		(u8  PORT,u8  PIN,u8  Direction	);
 DIO_ErrorStatus DIO_enumSetPinValue				(u8  PORT,u8  PIN,u8  Value		);
 DIO_ErrorStatus DIO_enumGetPinValue				(u8  PORT,u8  PIN,u8 * PtrData	);
-DIO_ErrorStatus DIO_enumTogglePin				(u8  PORT,u8  PIN);
+DIO_ErrorStatus DIO_enumTogglePinValue			(u8  PORT,u8  PIN);
 
 //PORT FUNCTIONS
-DIO_ErrorStatus DIO_enumSetPortDirection     	(u8  u8PORT, u8  u8Direction  	);
-DIO_ErrorStatus DIO_enumSetPortValue         	(u8  u8PORT, u8  u8Value      	);
-DIO_ErrorStatus DIO_enumGetPortValue         	(u8  u8PORT, u8 *  PtrData    	);
-DIO_ErrorStatus DIO_enumTogglePortValue      	(u8  u8PORT                   	);
+DIO_ErrorStatus DIO_enumSetPortDirection     	(u8  PORT, u8  Direction  	);
+DIO_ErrorStatus DIO_enumSetPortValue         	(u8  PORT, u8  Value      	);
+DIO_ErrorStatus DIO_enumGetPortValue         	(u8  PORT, u8 *  PtrData    	);
+DIO_ErrorStatus DIO_enumTogglePortValue      	(u8  PORT                   	);
 
 #endif /* DIO_INTERFACE_H_ */
