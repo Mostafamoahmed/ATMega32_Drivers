@@ -47,5 +47,5 @@ void LED_VoidOff(LED_Type LED_Configuration)
 //This Function Toggle The Pin
 void LED_VoidToggle(LED_Type LED_Configuration)
 {
-	DIO_enumTogglePin (LED_Configuration.Port, LED_Configuration.Pin);
+	DIO_enumTogglePinValue (LED_Configuration.Port, LED_Configuration.Pin);
 }
