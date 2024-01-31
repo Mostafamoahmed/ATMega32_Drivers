@@ -30,7 +30,7 @@ void SSD_Enable(SSD_Type SSD_Configuration)
 }
 
 //This Function disable the ssd by disabling the common pin
-void SSD_Enable(SSD_Type SSD_Configuration)
+void SSD_Disable(SSD_Type SSD_Configuration)
 {
 	if ( SSD_Configuration.Type == SSD_COMMON_CATHODE )
 	{
