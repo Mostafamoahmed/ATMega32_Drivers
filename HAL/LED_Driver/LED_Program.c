@@ -5,7 +5,7 @@
  *      Author: mosta
  */
 #include "LED_Interface.h"
-#include "../Dio_Driver/DIO_interface.h"
+#include "DIO_interface.h"
 #include "LED_Config.h"
 #include "LED_Private.h"
 #include "STD_TYPES.h"
