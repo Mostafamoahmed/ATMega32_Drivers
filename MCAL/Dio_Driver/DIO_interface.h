@@ -8,6 +8,8 @@
 #ifndef DIO_INTERFACE_H_
 #define DIO_INTERFACE_H_
 
+#include "STD_TYPES.h"
+
 typedef enum
 {
 	DIO_NOK,
