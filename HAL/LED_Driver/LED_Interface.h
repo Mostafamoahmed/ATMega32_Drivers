@@ -8,6 +8,8 @@
 #ifndef LED_INTERFACE_H_
 #define LED_INTERFACE_H_
 
+#include "STD_TYPES.h"
+
 //Ports Defines
 #define LED_PORTA 			0
 #define LED_PORTB 			1
