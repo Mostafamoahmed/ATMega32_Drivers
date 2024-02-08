@@ -24,5 +24,8 @@
 #define PIND_Register	*((volatile u8*) 0x30)
 #define DDRD_Register	*((volatile u8*) 0x31)
 
+//Pull up
+# define SFIOR			*((volatile u8*) 0x50)
+
 
 #endif /* DIO_PRIVATE_H_ */

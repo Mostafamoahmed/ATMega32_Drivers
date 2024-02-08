@@ -125,6 +125,90 @@ DIO_ErrorStatus DIO_enumTogglePinValue				(u8  PORT,u8  PIN)
 		return LOC_enumState;
 }
 
+/*This Function enables the internal pull-up of the pin*/
+DIO_ErrorStatus DIO_enumConnect_Disconnect_Pullup			(u8 PORT , u8 PIN,u8 Connect_PullUP)
+{	
+	DIO_ErrorStatus LOC_enumState = DIO_OK;
+	
+	if((PORT<=DIO_PORTD)&&(PIN<+DIO_PIN7))
+	{
+		switch(PORT)
+		{
+			case DIO_PORTA:
+				if(Connect_PullUP == DIO_PIN_PULLUP_YES)
+				{
+					/*Active the Internal Pull-up of the Pin*/
+					ClrBit(SFIOR,PUD);
+					ClrBit(DDRA_Register,PIN);
+					SetBit(PORTA_Register,PIN);
+				}
+				else 
+				{
+					//Disabale the Internal Pull-up of the PIN
+					ClrBit(PORTA_Register,PIN);
+				}
+				break;
+				
+			case DIO_PORTB:
+				if(Connect_PullUP == DIO_PIN_PULLUP_YES)
+				{
+					/*Active the Internal Pull-up of the Pin*/
+					ClrBit(SFIOR,PUD);
+					ClrBit(DDRB_Register,PIN);
+					SetBit(PORTB_Register,PIN);
+				}
+				else 
+				{
+					//Disabale the Internal Pull-up of the PIN
+					ClrBit(PORTB_Register,PIN);
+				}
+				break;
+				
+			case DIO_PORTC:
+				if(Connect_PullUP == DIO_PIN_PULLUP_YES)
+				{
+					/*Active the Internal Pull-up of the Pin*/
+					ClrBit(SFIOR,PUD);
+					ClrBit(DDRC_Register,PIN);
+					SetBit(PORTC_Register,PIN);
+				}
+				else 
+				{
+					//Disabale the Internal Pull-up of the PIN
+					ClrBit(PORTC_Register,PIN);
+				}
+				break;
+					
+			case DIO_PORTD:
+				if(Connect_PullUP == DIO_PIN_PULLUP_YES)
+				{
+					/*Active the Internal Pull-up of the Pin*/
+					ClrBit(SFIOR,PUD);
+					ClrBit(DDRD_Register,PIN);
+					SetBit(PORTD_Register,PIN);
+				}
+				else 
+				{
+					//Disabale the Internal Pull-up of the PIN
+					ClrBit(PORTA_Register,PIN);
+				}
+				break;
+				
+		}
+	}		
+	else
+	{
+		LOC_enumState = DIO_NOK;
+	}
+	return LOC_enumState;
+}
+
+/*Disable The Internal Pullup of all pins*/
+DIO_ErrorStatus DIO_enum_Disable_Internal_PullUp_AllPins(void)
+{
+	SetBit(SFIOR,PUD);
+}
+
 /*This Function set the Direction of the full PORT */
 DIO_ErrorStatus DIO_enumSetPortDirection     	(u8  PORT, u8  Direction  	)
 {
