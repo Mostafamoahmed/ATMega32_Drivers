@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "*.json": "json",
+        "clcd_interface.h": "c",
+        "dio_interface.h": "c"
+    }
+}
