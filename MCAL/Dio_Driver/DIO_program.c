@@ -204,7 +204,7 @@ DIO_ErrorStatus DIO_enumConnect_Disconnect_Pullup			(u8 PORT , u8 PIN,u8 Connect
 }
 
 /*Disable The Internal Pullup of all pins*/
-DIO_ErrorStatus DIO_enum_Disable_Internal_PullUp_AllPins(void)
+void DIO_Disable_Internal_PullUp_AllPins	(void)
 {
 	SetBit(SFIOR,PUD);
 }

@@ -57,7 +57,7 @@ DIO_ErrorStatus DIO_enumTogglePinValue			(u8  PORT,u8  PIN);
 
 //INTERNAL PULL-UP
 DIO_ErrorStatus DIO_enumConnect_Disconnect_Pullup			(u8 PORT , u8 PIN,u8 Connect_PullUP);
-DIO_ErrorStatus DIO_enum_Disable_Internal_PullUp_AllPins	(void);
+void DIO_Disable_Internal_PullUp_AllPins	(void);
 
 //PORT FUNCTIONS
 DIO_ErrorStatus DIO_enumSetPortDirection     	(u8  PORT, u8  Direction  	);
