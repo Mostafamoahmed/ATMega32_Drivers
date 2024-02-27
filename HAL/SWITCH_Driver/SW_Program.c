@@ -1,5 +1,5 @@
 #include "STD_TYPES.h"
-#include "BIR_MATH.h"
+#include "BIT_MATH.h"
 
 #include "DIO_interface.h"
 
@@ -15,15 +15,16 @@ void SW_Init(SW_Type SW_Config)
 	//Enable the Internal PullUp
 	if(SW_Config.PULLup_STATE == SW_INT_PULL_UP)
 	{
-		DIO_ErrorStatus DIO_enumConnect_Disconnect_Pullup			(SW_Config.PORT , SW_Config.PIN, DIO_PIN_PULLUP_YES);
+		 DIO_enumConnect_Disconnect_Pullup			(SW_Config.PORT , SW_Config.PIN, DIO_PIN_PULLUP_YES);
 	}
 }
 
 u8 SW_GetPressed(SW_Type SW_Config)
 {
+	u8 *PtrData ;
 	if(SW_Config.PULLup_STATE == SW_EXT_PULL_UP)
 	{
-		DIO_enumGetPinValue				(SW_Config.PORT,SW_Config.PIN,* PtrData	);
+		DIO_enumGetPinValue				(SW_Config.PORT,SW_Config.PIN, PtrData	);
 		if((*PtrData)==1)
 		{
 			return SW_NotPressed ;
@@ -35,7 +36,7 @@ u8 SW_GetPressed(SW_Type SW_Config)
 	}
 	else if (SW_Config.PULLup_STATE == SW_EXT_PULL_DOWN)
 	{
-		DIO_enumGetPinValue				(SW_Config.PORT,SW_Config.PIN, * PtrData	);
+		DIO_enumGetPinValue				(SW_Config.PORT,SW_Config.PIN, PtrData	);
 		if((*PtrData)==1)
 		{
 			return SW_Pressed ;
@@ -47,7 +48,7 @@ u8 SW_GetPressed(SW_Type SW_Config)
 	}
 	else if(SW_Config.PULLup_STATE == SW_INT_PULL_UP)
 	{
-		DIO_enumGetPinValue				(SW_Config.PORT,SW_Config.PIN, * PtrData	);
+		DIO_enumGetPinValue				(SW_Config.PORT,SW_Config.PIN, PtrData	);
 		if((*PtrData)==1)
 		{
 			return SW_Pressed ;
@@ -57,4 +58,6 @@ u8 SW_GetPressed(SW_Type SW_Config)
 			return SW_NotPressed ;
 		}
 	}
+	
+	return SW_NotPressed;
 }
