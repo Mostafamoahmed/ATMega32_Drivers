@@ -2,6 +2,8 @@
     "files.associations": {
         "*.json": "json",
         "clcd_interface.h": "c",
-        "dio_interface.h": "c"
+        "dio_interface.h": "c",
+        "keypad_interface.h": "c",
+        "keypad_config.h": "c"
     }
 }
