@@ -51,7 +51,7 @@ void SSD_SendNumber(SSD_Type SSD_Configuration , u8 Number)
 	{
 		 DIO_enumSetPortValue         	(SSD_Configuration.DataPort, Local_SSD_NUMBERS[Number]);
 	}
-	else if (SSD_Configuration.Type == SSD_COMMON_CATHODE)
+	else if (SSD_Configuration.Type == SSD_COMMON_ANODE)
 	{
 		 DIO_enumSetPortValue         	(SSD_Configuration.DataPort, ~(Local_SSD_NUMBERS[Number]));
 
