@@ -7,13 +7,13 @@
 */
 #define CLCD_MODE                              8
 
-/*Choose from the options below The Dtata Port D0---->D7
+/*Choose from the options below The Data Port D0---->D7
 1-DIO_PORTA
 2-DIO_PORTB
 3-DIO_PORTC
 4-DIO_PORTD
 */
-#define CLCD_DATA_PORT                      DIO_PORTA 
+#define CLCD_DATA_PORT                      DIO_PORTD
 
 /*Choose from the options below the Control Port RS,RW,EN
 1-DIO_PORTA
@@ -21,9 +21,9 @@
 3-DIO_PORTC
 4-DIO_PORTD
 */
-#define CLCD_CONTROLE_PORT                  DIO_PORTB
+#define CLCD_CONTROLE_PORT                  DIO_PORTC
 
-/*Choose from the options below the controle Pins 
+/*Choose from the options below the control Pins
 1-DIO_PIN0
 2-DIO_PIN1
 3-DIO_PIN2
@@ -33,8 +33,8 @@
 7-DIO_PIN6
 8-DIO_PIN7
 */
-#define CLCD_RS                            DIO_PIN0
-#define CLCD_RW                            DIO_PIN1
-#define CLCD_EN                            DIO_PIN2
+#define CLCD_RS                            DIO_PIN3
+#define CLCD_RW                            DIO_PIN4
+#define CLCD_EN                            DIO_PIN5
 
 #endif

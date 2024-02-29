@@ -7,8 +7,10 @@
 #include "CLCD_Config.h"
 #include "CLCD_Private.h"
 
+#include <avr/delay.h>
+
 //This Function Initialize the LCD according to the 8 Bits Mode 
-void Void_Init                      (void)
+void Void_Clcd_Init                      (void)
 {
     _delay_ms(50);
     DIO_enumSetPortDirection     	( CLCD_DATA_PORT     , DIO_PORT_OUTPUT  	);

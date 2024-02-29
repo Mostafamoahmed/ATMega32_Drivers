@@ -46,7 +46,7 @@
 
 
 //functions 
-void Void_Init                      (void);
+void Void_Clcd_Init                      (void);
 void Void_SendCommand               (u8 Command);
 void Void_SendData                  (u8 Data);
 void Void_ClearScreen               (void);
