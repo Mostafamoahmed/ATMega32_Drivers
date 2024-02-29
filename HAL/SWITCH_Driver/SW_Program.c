@@ -15,49 +15,40 @@ void SW_Init(SW_Type SW_Config)
 	//Enable the Internal PullUp
 	if(SW_Config.PULLup_STATE == SW_INT_PULL_UP)
 	{
+		//DIO_enumSetPinValue    ( SW_Config.PORT , SW_Config.PIN , DIO_PIN_HIGH  );
 		 DIO_enumConnect_Disconnect_Pullup			(SW_Config.PORT , SW_Config.PIN, DIO_PIN_PULLUP_YES);
 	}
 }
 
 u8 SW_GetPressed(SW_Type SW_Config)
 {
-	u8 *PtrData ;
-	if(SW_Config.PULLup_STATE == SW_EXT_PULL_UP)
+	u8 Data;
+	u8 Result = SW_NotPressed;
+	if((SW_Config.PULLup_STATE == SW_EXT_PULL_UP) || (SW_Config.PULLup_STATE == SW_INT_PULL_UP))
 	{
-		DIO_enumGetPinValue				(SW_Config.PORT,SW_Config.PIN, PtrData	);
-		if((*PtrData)==1)
+		DIO_enumGetPinValue				(SW_Config.PORT,SW_Config.PIN, &Data	);
+		if((Data)==1)
 		{
-			return SW_NotPressed ;
+			Result = SW_NotPressed ;
 		}
 		else
 		{
-			return SW_Pressed ;
+			Result = SW_Pressed ;
 		}
 	}
 	else if (SW_Config.PULLup_STATE == SW_EXT_PULL_DOWN)
 	{
-		DIO_enumGetPinValue				(SW_Config.PORT,SW_Config.PIN, PtrData	);
-		if((*PtrData)==1)
+		DIO_enumGetPinValue				(SW_Config.PORT,SW_Config.PIN, &Data	);
+		if((Data)==1)
 		{
-			return SW_Pressed ;
+			Result = SW_Pressed ;
 		}
 		else
 		{
-			return SW_NotPressed ;
+			Result = SW_NotPressed ;
 		}
 	}
-	else if(SW_Config.PULLup_STATE == SW_INT_PULL_UP)
-	{
-		DIO_enumGetPinValue				(SW_Config.PORT,SW_Config.PIN, PtrData	);
-		if((*PtrData)==1)
-		{
-			return SW_Pressed ;
-		}
-		else
-		{
-			return SW_NotPressed ;
-		}
-	}
-	
-	return SW_NotPressed;
+
+
+	return Result;
 }

@@ -1,7 +1,7 @@
 #ifndef SW_INTERFACE_H_
 #define SW_INTERFACE_H_
 
-#define "STD_TYPES.h"
+#include "STD_TYPES.h"
 
 #define SW_PORTA			0
 #define SW_PORTB			1
